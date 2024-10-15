@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1><center><i>Scientific Calculator</i></center></h1>
+        <div class="calculator">
+            <!-- Two-line display -->
+            <div class="display">
+                <input type="text" class="display-top" disabled id="previous-output" value="">
+                <input type="text" class="display-bottom" disabled id="current-output" value="0">
+            </div>
+
+            <!-- Calculator buttons -->
+            <div class="buttons">
+                <button class="btn function" onclick="clearDisplay()">AC</button>
+                <button class="btn function" onclick="deleteLast()">DEL</button>
+                <button class="btn function" onclick="appendToDisplay('(')">(</button>
+                <button class="btn function" onclick="appendToDisplay(')')">)</button>
+
+                <button class="btn function" onclick="appendToDisplay('**')">x^y</button>
+                <button class="btn operator" onclick="appendToDisplay('/')">÷</button>
+                <button class="btn operator" onclick="appendToDisplay('*')">×</button>
+                <button class="btn operator" onclick="appendToDisplay('-')">-</button>
+
+                <button class="btn number" onclick="appendToDisplay('7')">7</button>
+                <button class="btn number" onclick="appendToDisplay('8')">8</button>
+                <button class="btn number" onclick="appendToDisplay('9')">9</button>
+                <button class="btn operator" onclick="appendToDisplay('+')">+</button>
+
+                <button class="btn number" onclick="appendToDisplay('4')">4</button>
+                <button class="btn number" onclick="appendToDisplay('5')">5</button>
+                <button class="btn number" onclick="appendToDisplay('6')">6</button>
+                
+                <button class="btn number" onclick="appendToDisplay('1')">1</button>
+                <button class="btn number" onclick="appendToDisplay('2')">2</button>
+                <button class="btn number" onclick="appendToDisplay('3')">3</button>
+                <button class="btn operator" onclick="calculateResult()">=</button>
+
+                <button class="btn number" onclick="appendToDisplay('0')">0</button>
+                <button class="btn function" onclick="appendToDisplay('.')">.</button>
+                <button class="btn function" onclick="appendToDisplay('Math.sqrt(')">√</button>
+                <button class="btn function" onclick="appendToDisplay('1/')">1/x</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
